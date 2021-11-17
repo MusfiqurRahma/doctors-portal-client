@@ -20,7 +20,8 @@ const style = {
 
 const BookingModal = ({ openBookingModal, handleClose, booking, date,setBookingSuccess }) => {
     const { user } = useAuth();
-    const { name, time } = booking;
+    const { name, time, price } = booking;
+
   
   const initialInfo = { patientName: user.displayName, email: user.email, phone: '' }
   
@@ -39,10 +40,10 @@ const BookingModal = ({ openBookingModal, handleClose, booking, date,setBookingS
          // collect data
       const appointment = {
         ...bookingInfo,
+        price,
         time,
         serviceName: name,
         date:date.toLocaleDateString()
-
       }
         // send to the server
       fetch('https://whispering-harbor-44995.herokuapp.com/appointments', {

@@ -6,7 +6,7 @@ const Booking = ({ booking,date,setBookingSuccess }) => {
     const [openBookingModal, setOpenBookingModal] = React.useState(false);
     const handleOpen = () => setOpenBookingModal(true);
     const handleClose = () => setOpenBookingModal(false);
-    const { name, time, space } = booking;
+    const { name, time, space,price } = booking;
     return (          
           <> <Grid item xs={12} sm={6} md={4}>
             <Paper sx={{p:5}} elevation={3}>
@@ -18,6 +18,9 @@ const Booking = ({ booking,date,setBookingSuccess }) => {
             </Typography>
             <Typography variant="caption" display="block" gutterBottom>
                {space} Spaces Available
+            </Typography>
+            <Typography variant="caption" display="block" gutterBottom>
+               Price:${price}
             </Typography>
             <Button onClick={handleOpen} sx={{backgroundColor:'#12d1da'}} variant="contained">BOOK APPOINTMENT</Button>   
             </Paper>

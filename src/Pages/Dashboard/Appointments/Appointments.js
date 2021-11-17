@@ -1,5 +1,6 @@
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Appointments = ({date}) => {
@@ -41,7 +42,7 @@ const Appointments = ({date}) => {
               </TableCell>
               <TableCell align="right">{row.time}</TableCell>
               <TableCell align="right">{row.serviceName}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
+              <TableCell align="right">{row.payment? 'paid': <Link to={`/dashboard/payment/${row._id}`}> <button>Pay</button> </Link> }</TableCell>
             </TableRow>
           ))}
         </TableBody>

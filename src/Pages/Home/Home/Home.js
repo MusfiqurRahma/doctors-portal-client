@@ -3,6 +3,7 @@ import AppointmentBanner from '../AppointmentBanner/AppointmentBanner';
 import Banner from '../Banner/Banner';
 import Contact from '../Contact/Contact';
 import DentalCare from '../DentalCare/DentalCare';
+import Doctors from '../Doctors/Doctors';
 import Services from '../Services/Services';
 import Navigation from '../Shared/Navigation/Navigation';
 import ShortContact from '../ShortContact/ShortContact';
@@ -17,6 +18,7 @@ const Home = () => {
             <Services></Services>           
             <DentalCare></DentalCare>
             <AppointmentBanner></AppointmentBanner>
+            <Doctors></Doctors>
             <Testimonial></Testimonial>
             <Contact></Contact>
         </div>
